@@ -1,0 +1,236 @@
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/tb_cdac.sch
+**.subckt tb_cdac xxx
+*.opin xxx
+x1 xxx net14 net15 net13 net12 net9 net11 net8 net7 net6 net10 net5 net4 net3 net2 net1 net16
++ my_cdac
+V1 net16 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V2 net1 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V3 net2 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V4 net3 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V5 net4 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V6 net5 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V7 net10 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V8 net6 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V10 net7 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V11 net8 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V12 net11 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V13 net9 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V9 net12 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V14 net13 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V15 net15 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+V16 net14 GND DC pulse(0 1.8 0 30p 30p 5.555n 11.11n)
+**** begin user architecture code
+ .lib ~/skywater/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/sky130.lib.spice tt
+.include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_sc_hd/spice/sky130_fd_sc_hd.spice
+
+
+
+.options acct list
+.temp 25
+.control
+tran 30p 80n
+write tb_saradc.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  my_cdac.sym # of pins=17
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/my_cdac.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/my_cdac.sch
+.subckt my_cdac  Vref SW0 SW1 Sample SW3 SW0B COMP_ENB SW1B SW2 SW2B SW5B SW3B SW4 SW4B SW5 VCM VIN
+*.ipin VCM
+*.ipin VIN
+*.opin Vref
+*.ipin COMP_ENB
+*.ipin Sample
+*.ipin SW0
+*.ipin SW0B
+*.ipin SW1
+*.ipin SW1B
+*.ipin SW2
+*.ipin SW2B
+*.ipin SW3
+*.ipin SW3B
+*.ipin SW4
+*.ipin SW4B
+*.ipin SW5
+*.ipin SW5B
+XC1 Vref net7 sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 Vref net1 sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+xproblem COMP_ENB net7 VCM analog_switch
+x2 Sample net7 VIN analog_switch
+x3 SW0 net1 VCM analog_switch
+x4 SW0B net1 VIN analog_switch
+x5 SW1 net2 VCM analog_switch
+x6 SW1B net2 VIN analog_switch
+x7 SW2 net3 VCM analog_switch
+x8 SW2B net3 VIN analog_switch
+x9 SW3 net4 VCM analog_switch
+x10 SW3B net4 VIN analog_switch
+x11 SW4 net5 VCM analog_switch
+x12 SW4B net5 VIN analog_switch
+x13 SW5 net6 VCM analog_switch
+x14 SW5B net6 VIN analog_switch
+x15 Vref net2 cap2
+x16 Vref net3 cap4
+x17 Vref net4 cap8
+x18 Vref net5 cap16
+x19 Vref net6 cap32
+.ends
+
+
+* expanding   symbol:  analog_switch.sym # of pins=3
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/analog_switch.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/analog_switch.sch
+.subckt analog_switch  control OUT IN
+*.ipin IN
+*.ipin control
+*.opin OUT
+x1 control OUT IN net1 transmission_gate
+x2 control net1 not
+.ends
+
+
+* expanding   symbol:  cap2.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/cap2.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap2.sch
+.subckt cap2  out in
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  cap4.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/cap4.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap4.sch
+.subckt cap4  out in
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC3 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC4 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  cap8.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/cap8.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap8.sch
+.subckt cap8  out in
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC3 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC4 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC5 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC6 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC7 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC8 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  cap16.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/cap16.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap16.sch
+.subckt cap16  out in
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC3 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC4 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC5 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC6 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC7 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC8 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC9 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC10 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC11 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC12 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC13 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC14 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC15 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC16 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  cap32.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/cap32.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap32.sch
+.subckt cap32  out in
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC3 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC4 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC5 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC6 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC7 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC8 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC9 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC10 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC11 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC12 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC13 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC14 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC15 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC16 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC17 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC18 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC19 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC20 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC21 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC22 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC23 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC24 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC25 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC26 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC27 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC28 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC29 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC30 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC31 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC32 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+.ends
+
+
+* expanding   symbol:  transmission_gate.sym # of pins=4
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/transmission_gate.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/transmission_gate.sch
+.subckt transmission_gate  GP OUT IN GN
+*.opin OUT
+*.ipin IN
+*.ipin GN
+*.ipin GP
+XM1 OUT GN IN GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 OUT GP IN VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  not.sym # of pins=2
+** sym_path: /home/oe23ranan/mpw/saradcspr2022/not.sym
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/not.sch
+.subckt not  a y
+*.opin y
+*.ipin a
+XM1 y a GND GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM2 y a VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

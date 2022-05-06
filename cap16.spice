@@ -1,0 +1,22 @@
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/cap16.sch
+**.subckt cap16 in out
+*.ipin in
+*.opin out
+XC1 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC2 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC3 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC4 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC5 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC6 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC7 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC8 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC9 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC10 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC11 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC12 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC13 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC14 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC15 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+XC16 out in sky130_fd_pr__cap_mim_m3_1 W=2 L=2.15 MF=1 m=1
+**.ends
+.end

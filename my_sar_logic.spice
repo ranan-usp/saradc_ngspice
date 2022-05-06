@@ -1,0 +1,77 @@
+** sch_path: /home/oe23ranan/mpw/saradcspr2022/my_sar_logic.sch
+**.subckt my_sar_logic CLK COMP_EN Sample COMP_IN Q05 Q04 Q03 Q02 Q01 Q00 SW5 SW5B SW4 SW4B SW3 SW3B
+*+ SW2 SW2B SW1 SW1B SW0 SW0B
+*.ipin CLK
+*.opin COMP_EN
+*.opin Sample
+*.ipin COMP_IN
+*.opin Q05
+*.opin Q04
+*.opin Q03
+*.opin Q02
+*.opin Q01
+*.opin Q00
+*.opin SW5
+*.opin SW5B
+*.opin SW4
+*.opin SW4B
+*.opin SW3
+*.opin SW3B
+*.opin SW2
+*.opin SW2B
+*.opin SW1
+*.opin SW1B
+*.opin SW0
+*.opin SW0B
+V1 net1 GND 1
+x5 CLK net4 net23 GND GND VDD VDD net6 net5 sky130_fd_sc_hd__dfrbp_1
+x21 net18 net19 GND GND VDD VDD D1 sky130_fd_sc_hd__and2_1
+x37 Sample D6 net24 GND GND VDD VDD SW5 sky130_fd_sc_hd__or3_1
+x43 SW5 GND GND VDD VDD SW5B sky130_fd_sc_hd__inv_2
+x30 net23 net24 GND GND GND VDD VDD Q05 sky130_fd_sc_hd__dfrtp_1
+x7 SW4 GND GND VDD VDD SW4B sky130_fd_sc_hd__inv_2
+x10 SW3 GND GND VDD VDD SW3B sky130_fd_sc_hd__inv_2
+x13 SW2 GND GND VDD VDD SW2B sky130_fd_sc_hd__inv_2
+x16 SW1 GND GND VDD VDD SW1B sky130_fd_sc_hd__inv_2
+x19 SW0 GND GND VDD VDD SW0B sky130_fd_sc_hd__inv_2
+x22 D6 GND GND VDD VDD net30 sky130_fd_sc_hd__inv_2
+x24 D5 GND GND VDD VDD net8 sky130_fd_sc_hd__inv_2
+x36 D4 GND GND VDD VDD net11 sky130_fd_sc_hd__inv_2
+x44 D3 GND GND VDD VDD net14 sky130_fd_sc_hd__inv_2
+x45 D2 GND GND VDD VDD net17 sky130_fd_sc_hd__inv_2
+x46 D1 GND GND VDD VDD net20 sky130_fd_sc_hd__inv_2
+x47 CLK GND GND VDD VDD net22 sky130_fd_sc_hd__inv_2
+x38 Sample D5 net25 GND GND VDD VDD SW4 sky130_fd_sc_hd__or3_1
+x39 Sample D4 net26 GND GND VDD VDD SW3 sky130_fd_sc_hd__or3_1
+x40 Sample D3 net27 GND GND VDD VDD SW2 sky130_fd_sc_hd__or3_1
+x41 Sample D2 net28 GND GND VDD VDD SW1 sky130_fd_sc_hd__or3_1
+x42 Sample D1 net29 GND GND VDD VDD SW0 sky130_fd_sc_hd__or3_1
+x1 net23 net25 GND GND GND VDD VDD Q04 sky130_fd_sc_hd__dfrtp_1
+x3 net23 net26 GND GND GND VDD VDD Q03 sky130_fd_sc_hd__dfrtp_1
+x8 net23 net27 GND GND GND VDD VDD Q02 sky130_fd_sc_hd__dfrtp_1
+x11 net23 net28 GND GND GND VDD VDD Q01 sky130_fd_sc_hd__dfrtp_1
+x14 net23 net29 GND GND GND VDD VDD Q00 sky130_fd_sc_hd__dfrtp_1
+x17 net30 COMP_IN Sample GND GND VDD VDD net24 sky130_fd_sc_hd__dfrtp_1
+x20 net8 COMP_IN Sample GND GND VDD VDD net25 sky130_fd_sc_hd__dfrtp_1
+x23 net11 COMP_IN Sample GND GND VDD VDD net26 sky130_fd_sc_hd__dfrtp_1
+x25 net14 COMP_IN Sample GND GND VDD VDD net27 sky130_fd_sc_hd__dfrtp_1
+x26 net17 COMP_IN Sample GND GND VDD VDD net28 sky130_fd_sc_hd__dfrtp_1
+x27 net20 COMP_IN Sample GND GND VDD VDD net29 sky130_fd_sc_hd__dfrtp_1
+x28 CLK net1 net23 GND GND VDD VDD net3 net2 sky130_fd_sc_hd__dfrbp_1
+x29 CLK net3 net23 GND GND VDD VDD net4 COMP_EN sky130_fd_sc_hd__dfrbp_1
+x31 CLK net6 net23 GND GND VDD VDD net9 net7 sky130_fd_sc_hd__dfrbp_1
+x32 CLK net9 net23 GND GND VDD VDD net12 net10 sky130_fd_sc_hd__dfrbp_1
+x33 CLK net12 net23 GND GND VDD VDD net15 net13 sky130_fd_sc_hd__dfrbp_1
+x34 CLK net15 net23 GND GND VDD VDD net18 net16 sky130_fd_sc_hd__dfrbp_1
+x35 CLK net18 net23 GND GND VDD VDD net21 net19 sky130_fd_sc_hd__dfrbp_1
+x48 net22 net21 net23 GND GND VDD VDD net23 sky130_fd_sc_hd__dfrtp_1
+x2 net15 net16 GND GND VDD VDD D2 sky130_fd_sc_hd__and2_1
+x4 net12 net13 GND GND VDD VDD D3 sky130_fd_sc_hd__and2_1
+x6 net9 net10 GND GND VDD VDD D4 sky130_fd_sc_hd__and2_1
+x9 net6 net7 GND GND VDD VDD D5 sky130_fd_sc_hd__and2_1
+x12 net4 net5 GND GND VDD VDD D6 sky130_fd_sc_hd__and2_1
+x15 net3 COMP_EN GND GND VDD VDD GND sky130_fd_sc_hd__and2_1
+x18 net1 net2 GND GND VDD VDD Sample sky130_fd_sc_hd__and2_1
+**.ends
+.GLOBAL GND
+.end
