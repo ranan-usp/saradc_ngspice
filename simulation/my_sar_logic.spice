@@ -1,0 +1,106 @@
+** sch_path: /home/oe23ranan/mpw/saradc_ngspice/my_sar_logic.sch
+**.subckt my_sar_logic Sample COMP_IN Q05 Q04 Q03 Q02 Q01 Q00 SW5 SW4 SW4B SW3 SW3B SW2 SW2B SW1
+*+ SW1B SW0 SW0B CLK COMP_EN SW5B
+*.opin Sample
+*.ipin COMP_IN
+*.opin Q05
+*.opin Q04
+*.opin Q03
+*.opin Q02
+*.opin Q01
+*.opin Q00
+*.opin SW5
+*.opin SW4
+*.opin SW4B
+*.opin SW3
+*.opin SW3B
+*.opin SW2
+*.opin SW2B
+*.opin SW1
+*.opin SW1B
+*.opin SW0
+*.opin SW0B
+*.ipin CLK
+*.opin COMP_EN
+*.opin SW5B
+V1 VA GND 1.8
+x49 SW5 GND GND VDD VDD SW5B sky130_fd_sc_hd__inv_2
+x7 SW4 GND GND VDD VDD SW4B sky130_fd_sc_hd__inv_2
+x10 SW5 GND GND VDD VDD SW5B sky130_fd_sc_hd__inv_2
+x13 SW3 GND GND VDD VDD SW3B sky130_fd_sc_hd__inv_2
+x16 SW2 GND GND VDD VDD SW2B sky130_fd_sc_hd__inv_2
+x19 SW1 GND GND VDD VDD SW1B sky130_fd_sc_hd__inv_2
+x43 SW0 GND GND VDD VDD SW0B sky130_fd_sc_hd__inv_2
+x22 D6 GND GND VDD VDD D6B sky130_fd_sc_hd__inv_2
+x24 D5 GND GND VDD VDD D5B sky130_fd_sc_hd__inv_2
+x36 D4 GND GND VDD VDD D4B sky130_fd_sc_hd__inv_2
+x44 D3 GND GND VDD VDD D3B sky130_fd_sc_hd__inv_2
+x45 D2 GND GND VDD VDD D2B sky130_fd_sc_hd__inv_2
+x46 D1 GND GND VDD VDD D1B sky130_fd_sc_hd__inv_2
+x47 Sample D6 5D GND GND VDD VDD SW5 sky130_fd_sc_hd__or3_1
+x37 Sample D5 4D GND GND VDD VDD SW4 sky130_fd_sc_hd__or3_1
+x38 Sample D4 3D GND GND VDD VDD SW3 sky130_fd_sc_hd__or3_1
+x39 Sample D3 2D GND GND VDD VDD SW2 sky130_fd_sc_hd__or3_1
+x40 Sample D2 1D GND GND VDD VDD SW1 sky130_fd_sc_hd__or3_1
+x41 Sample D1 net2 GND GND VDD VDD SW0 sky130_fd_sc_hd__or3_1
+x42 VA VB GND GND VDD VDD Sample sky130_fd_sc_hd__and2_0
+x2 VC COMP_EN GND GND VDD VDD GND sky130_fd_sc_hd__and2_0
+x4 VE VF GND GND VDD VDD D6 sky130_fd_sc_hd__and2_0
+x6 VG VH GND GND VDD VDD D5 sky130_fd_sc_hd__and2_0
+x9 VI VJ GND GND VDD VDD D4 sky130_fd_sc_hd__and2_0
+x12 VK VL GND GND VDD VDD D3 sky130_fd_sc_hd__and2_0
+x15 VM VN GND GND VDD VDD D2 sky130_fd_sc_hd__and2_0
+x18 VO VP GND GND VDD VDD D1 sky130_fd_sc_hd__and2_0
+x1 clear Q05 5D GND my_df
+x3 clear Q04 4D GND my_df
+x8 clear Q03 3D GND my_df
+x11 clear Q02 2D GND my_df
+x14 clear Q01 1D GND my_df
+x17 clear Q00 net2 GND my_df
+x20 D6B 5D COMP_IN Sample my_df
+x23 D5B 4D COMP_IN Sample my_df
+x25 D4B 3D COMP_IN Sample my_df
+x26 D3B 2D COMP_IN Sample my_df
+x27 D2B 1D COMP_IN Sample my_df
+x35 D1B net2 COMP_IN Sample my_df
+x5 CLK VC VA VB clear my_df2
+x21 CLK VE VC COMP_EN mark my_df2
+x28 CLK VG VE VF clear my_df2
+x29 CLK VI VG VH clear my_df2
+x30 CLK VK VI VJ clear my_df2
+x31 CLK VM VK VL clear my_df2
+x32 CLK VO VM VN clear my_df2
+x33 CLK mark VO VP clear my_df2
+x34 CLK GND GND VDD VDD net1 sky130_fd_sc_hd__inv_2
+x48 net1 clear mark GND my_df
+**.ends
+
+* expanding   symbol:  my_df.sym # of pins=4
+** sym_path: /home/oe23ranan/mpw/saradc_ngspice/my_df.sym
+** sch_path: /home/oe23ranan/mpw/saradc_ngspice/my_df.sch
+.subckt my_df  CLK Q D RESET
+*.ipin CLK
+*.ipin D
+*.ipin RESET
+*.opin Q
+x1 RESET GND GND VDD VDD net1 sky130_fd_sc_hd__inv_1
+x2 CLK D net1 VDD GND GND VDD VDD Q GND sky130_fd_sc_hd__dfbbp_1
+.ends
+
+
+* expanding   symbol:  my_df2.sym # of pins=5
+** sym_path: /home/oe23ranan/mpw/saradc_ngspice/my_df2.sym
+** sch_path: /home/oe23ranan/mpw/saradc_ngspice/my_df2.sch
+.subckt my_df2  CLK Q D Q_N RESET
+*.ipin CLK
+*.ipin D
+*.ipin RESET
+*.opin Q
+*.opin Q_N
+x1 RESET GND GND VDD VDD net1 sky130_fd_sc_hd__inv_1
+x2 CLK D net1 VDD GND GND VDD VDD Q Q_N sky130_fd_sc_hd__dfbbp_1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end

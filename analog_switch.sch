@@ -22,22 +22,23 @@ S {}
 E {}
 N 100 -220 330 -220 {
 lab=IN}
-N 100 -330 400 -330 {
-lab=control}
 N 400 -330 400 -280 {
-lab=control}
+lab=#net1}
 N 200 -330 200 -100 {
-lab=control}
+lab=#net2}
 N 200 -100 240 -100 {
-lab=control}
+lab=#net2}
 N 370 -100 400 -100 {
-lab=#net1}
+lab=#net3}
 N 400 -160 400 -100 {
-lab=#net1}
+lab=#net3}
 N 470 -220 540 -220 {
-lab=xxx}
+lab=OUT}
+N 360 -330 400 -330 {}
+N 100 -330 230 -330 {}
+N 240 -100 370 -100 {}
 C {transmission_gate.sym} 220 -100 0 0 {name=x1}
 C {ipin.sym} 110 -220 0 0 {name=p1 lab=IN}
 C {ipin.sym} 110 -330 0 0 {name=p2 lab=control}
-C {not.sym} 390 -100 0 0 {name=x2}
+C {not.sym} 380 -330 0 0 {name=x2}
 C {opin.sym} 530 -220 0 0 {name=p3 lab=OUT}

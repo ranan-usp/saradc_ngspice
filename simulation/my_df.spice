@@ -1,0 +1,13 @@
+** sch_path: /home/oe23ranan/mpw/saradc_ngspice/my_df.sch
+**.subckt my_df CLK D RESET Q
+*.ipin CLK
+*.ipin D
+*.ipin RESET
+*.opin Q
+x1 RESET GND GND VDD VDD net1 sky130_fd_sc_hd__inv_1
+x2 CLK D net1 VDD GND GND VDD VDD Q GND sky130_fd_sc_hd__dfbbp_1
+*  x3 -  gnd  IS MISSING !!!!
+**.ends
+.GLOBAL VDD
+.GLOBAL GND
+.end

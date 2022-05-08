@@ -1,0 +1,12 @@
+** sch_path: /home/oe23ranan/mpw/saradc_ngspice/my_df2.sch
+**.subckt my_df2 CLK D RESET Q Q_N
+*.ipin CLK
+*.ipin D
+*.ipin RESET
+*.opin Q
+*.opin Q_N
+x1 RESET GND GND VDD VDD net1 sky130_fd_sc_hd__inv_1
+x2 CLK D net1 GND GND GND VDD VDD Q Q_N sky130_fd_sc_hd__dfbbp_1
+**.ends
+.GLOBAL GND
+.end
