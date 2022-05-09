@@ -22,8 +22,10 @@ N 140 -70 180 -70 {
 lab=Q_N}
 N 130 -70 140 -70 {
 lab=Q_N}
-N -80 -30 -80 0 {}
-N -80 -30 -50 -30 {}
+N -90 -30 -90 10 {
+lab=VDD}
+N -90 -30 -50 -30 {
+lab=VDD}
 C {xschem_sky130/sky130_stdcells/inv_1.sym} -210 -50 0 0 {name=x1 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {ipin.sym} -100 -90 0 0 {name=p1 lab=CLK}
 C {ipin.sym} -100 -70 0 0 {name=p2 lab=D}
@@ -31,4 +33,4 @@ C {ipin.sym} -270 -50 0 0 {name=p3 lab=RESET}
 C {opin.sym} 180 -90 0 0 {name=p4 lab=Q}
 C {opin.sym} 180 -70 0 0 {name=p5 lab=Q_N}
 C {xschem_sky130/sky130_stdcells/dfbbp_1.sym} 40 -60 0 0 {name=x2 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
-C {vdd.sym} -80 0 2 0 {name=l2 lab=VDD}
+C {vdd.sym} -90 10 2 0 {name=l1 lab=VDD}

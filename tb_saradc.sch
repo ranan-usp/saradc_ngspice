@@ -129,9 +129,9 @@ lab=COMP_EN}
 N 200 -650 240 -650 {
 lab=COMP_EN}
 N 540 -670 610 -670 {
-lab=#net3}
-N 1030 -650 1030 -630 {
 lab=#net2}
+N 1030 -650 1030 -630 {
+lab=#net3}
 N 1030 -570 1030 -550 {
 lab=GND}
 N 910 -720 1070 -720 {
@@ -153,18 +153,21 @@ lab=#net5}
 N 200 -1020 360 -1020 {
 lab=COMP_EN}
 N 380 -670 540 -670 {
-lab=#net3}
+lab=#net2}
 N 450 -730 510 -730 {
 lab=VCM}
 N 450 -700 510 -700 {
 lab=Vref}
-N 910 -680 1030 -680 {}
-N 1030 -680 1030 -650 {}
-N 1780 -1020 1780 -930 {}
+N 910 -680 1030 -680 {
+lab=#net3}
+N 1030 -680 1030 -650 {
+lab=#net3}
+N 1780 -1020 1780 -930 {
+lab=COMP_EN}
 C {my_dynamic_comp.sym} 760 -700 0 0 {name=x2}
 C {my_sar_logic.sym} 1580 -740 0 0 {name=x3}
 C {gnd.sym} 1160 -350 0 0 {name=l30 lab=GND}
-C {vsource.sym} 1160 -400 0 0 {name=V2 value="DC pulse(0 1 0 1u 0 0 1u)"}
+C {vsource.sym} 1160 -400 0 0 {name=V2 value="DC pulse(0 1 0 12.8u 0 0.2u 13u)"}
 C {gnd.sym} 1400 -200 0 0 {name=l41 lab=GND}
 C {opin.sym} 1770 -910 0 0 {name=p42 sig_type=std_logic lab=Q00}
 C {code.sym} 1680 -400 0 0 {name=TT_MODELS
@@ -180,7 +183,7 @@ value="
 .options acct list
 .temp 25
 
-.tran 1n 1u
+.tran 1n 13u
 .control
 save all
 write tb_saradc2.raw
