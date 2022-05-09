@@ -20,8 +20,8 @@ K {}
 V {assign #150 y=~a ;}
 S {}
 E {}
-N 420 -260 420 -230 {lab=y}
-N 420 -260 460 -260 {lab=y}
+N 420 -260 420 -230 {lab=out}
+N 420 -260 460 -260 {lab=out}
 N 380 -260 380 -200 {lab=a}
 N 340 -260 380 -260 {lab=a}
 N 420 -400 420 -360 {lab=VDD}
@@ -33,12 +33,9 @@ N 420 -360 500 -360 { lab=VDD}
 N 500 -360 500 -320 { lab=VDD}
 N 420 -320 500 -320 { lab=VDD}
 N 380 -320 380 -260 { lab=a}
-N 420 -290 420 -260 {lab=y}
+N 420 -290 420 -260 {lab=out}
 N 420 -170 420 -160 { lab=GND}
 N 420 -360 420 -350 { lab=VDD}
-C {devices/opin.sym} 460 -260 0 0 {name=p1 lab=y verilog_type=wire}
-C {devices/ipin.sym} 340 -260 0 0 {name=p2 lab=a}
-C {devices/title.sym} 160 0 0 0 {name=l3 author="Stefan Schippers"}
 C {vdd.sym} 420 -400 0 0 {name=l1 lab=VDD}
 C {gnd.sym} 420 -140 0 0 {name=l2 lab=GND}
 C {xschem_sky130/sky130_fd_pr/nfet_01v8_lvt.sym} 400 -200 0 0 {name=M1
@@ -69,3 +66,5 @@ sa=0 sb=0 sd=0
 model=pfet_01v8_lvt
 spiceprefix=X
 }
+C {ipin.sym} 350 -260 0 0 {name=p1 lab=a}
+C {opin.sym} 450 -260 0 0 {name=p2 lab=y}

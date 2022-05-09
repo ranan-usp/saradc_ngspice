@@ -552,7 +552,6 @@ C {lab_pin.sym} 2130 -1240 3 0 {name=l18 lab=D3}
 C {lab_pin.sym} 2410 -1240 3 0 {name=l19 lab=D2}
 C {lab_pin.sym} 2690 -1240 3 0 {name=l20 lab=D1}
 C {gnd.sym} 780 -540 0 0 {name=l21 lab=GND}
-C {xschem_sky130/sky130_stdcells/inv_2.sym} 1360 -1470 3 0 {name=x49 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {xschem_sky130/sky130_stdcells/inv_2.sym} 1640 -1470 3 0 {name=x7 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {xschem_sky130/sky130_stdcells/inv_2.sym} 1360 -1470 3 0 {name=x10 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {xschem_sky130/sky130_stdcells/inv_2.sym} 1920 -1470 3 0 {name=x13 VGND=GND VNB=GND VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }

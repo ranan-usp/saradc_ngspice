@@ -85,8 +85,8 @@ only_toplevel=true
 format="tcleval( @value )"
 value="
 ** opencircuitdesign pdks install
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
-.include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
+.lib $::SKYWATER_MODELS/models/sky130.lib.spice tt
+*.include $::SKYWATER_STDCELLS/sky130_fd_sc_hd.spice
 *.include /usr/local/share/pdk/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__cap_mim_m3_1.model.spice
 
 "
